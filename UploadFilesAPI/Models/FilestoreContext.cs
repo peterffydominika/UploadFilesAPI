@@ -15,13 +15,13 @@ public partial class FilestoreContext : DbContext
     {
     }
 
-    public virtual DbSet<File> Files { get; set; }
+    public virtual DbSet<Fileupload> Files { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseMySQL("server=localhost;database=filestore;user=root;password=password");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<File>(entity =>
+        modelBuilder.Entity<Fileupload>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
