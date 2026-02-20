@@ -1,3 +1,7 @@
+using UploadFilesAPI.Models;
+using UploadFilesAPI.Services;
+using UploadFilesAPI.Services.Interfaces;
+
 namespace UploadFilesAPI
 {
     public class Program
@@ -7,6 +11,8 @@ namespace UploadFilesAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<FilestoreContext>();
+            builder.Services.AddScoped<IUploadFile, UploadFile>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

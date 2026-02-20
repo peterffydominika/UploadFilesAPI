@@ -10,15 +10,7 @@ namespace UploadFilesAPI.Services {
         }
 
         public async Task<object> Download(int id) {
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            throw new NotImplementedException();
         }
 
         public async Task<object> Upload(IFormFile formFile) {
